@@ -8,9 +8,8 @@ object DockerComposeIssues : BuildType({
     name = "Docker Compose Issues"
 
     vcs {
-        // VCS root
+        root(DslContext.settingsRoot)
     }
-
     steps {
         dockerCompose {
             name = "Start Docker Compose"
