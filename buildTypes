@@ -21,7 +21,7 @@ object DockerComposeIssues : BuildType({
             name = "Echo"
             id = "Echo"
             scriptContent = """echo "##teamcity[buildStop comment='Test cancellation' readdToQueue='false']""""
-            dockerImage = "<container>" // can be any container
+            dockerImage = "alpine" // can be any container
         }
     }
 })
