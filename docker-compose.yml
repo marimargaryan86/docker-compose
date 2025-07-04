@@ -1,17 +1,18 @@
-version: '3.8'
+version: '3'
 
 services:
-  mysql:
-    image: mysql:5.7
-    container_name: test-mysql
-    environment:
-      MYSQL_ROOT_PASSWORD: root
+  testdb-host:
+    image: mysql:8.0
+    container_name: mysql-db
+    restart: always
     ports:
-      - "3306:3306"
-    networks:
-      - custom_net
+      - '3306'
+    environment:
+      MYSQL_ALLOW_EMPTY_PASSWORD: 'yes'
+      MYSQL_USER: test
+      MYSQL_PASSWORD: test
+    volumes:
+      - mysql_data:/var/lib/mysql
 
-networks:
-  custom_net:
-    driver: bridge
-
+volumes:
+  mysql_data:
