@@ -4,7 +4,7 @@ services:
   testdb-host:
     image: mysql:8.0
     container_name: mysql-db
-    restart: always
+    #restart: always
     ports:
       - '3306'
     environment:
